@@ -35,8 +35,8 @@ public class ProductProxy {
 //                    if(n.getName()==null) throw new RuntimeException();
 //                })
 //                .onErrorContinue((e,o)-> System.out.println(e.getMessage()));
-//                .onErrorContinue(RuntimeException.class,(e,o)-> System.out.println(e.getMessage()))
-//                .onErrorContinue(e->e.getMessage()==null,(e,o)-> System.out.println(e.getMessage()))
+                .onErrorContinue(RuntimeException.class,(e,o)-> System.out.println(e.getMessage()))
+                .onErrorContinue(e->e.getMessage()==null,(e,o)-> System.out.println(e.getMessage()))
                 .retry(2);
     }
 }
